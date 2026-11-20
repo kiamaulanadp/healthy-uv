@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#eef6ff">
+
+    <title>UV Forecast | HEALTHY UV</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=6">
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html">☀ HEALTHY <span>UV</span></a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Buka navigasi">
+            ☰
+        </button>
+
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="calculator.html">UV Calculator</a>
+            <a href="monitor.html">UV Monitor</a>
+            <a href="forecast.html" class="active">UV Forecast</a>
+            <a href="tips.html">Protection Tips</a>
+            <a href="know-your-uv.html">Know Your UV</a>
+            <a href="stay-protected.html">Stay Protected</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="section-head">
+            <h1>UV Forecast & Trend</h1>
+            <p>
+                Eksplorasi contoh pola perubahan UV sepanjang hari melalui grafik interaktif.
+            </p>
+        </div>
+
+        <div class="panel">
+            <div style="display: flex; justify-content: space-between; gap: 15px; align-items: center; flex-wrap: wrap; margin-bottom: 15px">
+                <div>
+                    <h3 style="color: var(--navy)">Daily UV Pattern</h3>
+                    <p class="note">
+                        Pilih skenario untuk mengubah kurva grafik.
+                    </p>
+                </div>
+
+                <select id="patternSelect" class="searchbox" style="max-width: 220px">
+                    <option value="clear">Hari cerah</option>
+                    <option value="cloudy">Berawan</option>
+                    <option value="low">UV relatif rendah</option>
+                </select>
+            </div>
+
+            <div class="chart-wrap">
+                <canvas id="uvChart" aria-label="Grafik simulasi indeks UV harian"></canvas>
+            </div>
+
+            <p class="note">
+                PENTING: grafik ini merupakan simulasi ilustratif untuk demonstrasi, bukan prakiraan aktual BMKG. Jangan gunakan grafik ini untuk menentukan waktu aman beraktivitas.
+            </p>
+        </div>
+
+        <div class="bmkg-box">
+            <h3>Ingin melihat prakiraan resmi?</h3>
+
+            <p>
+                Periksa prediksi UV terkini melalui dashboard resmi BMKG.
+            </p>
+
+            <a class="btn" href="https://cews.bmkg.go.id/dashboard-custom/prediksi-UVI-indonesia/" target="_blank" rel="noopener">
+                Kunjungi BMKG ↗
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <b>☀ HEALTHY UV</b><br> Know Your Sun, Protect Your Skin!<br> An Educational Website for UV Awareness<br> © 2026 HEALTHY UV
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js?v=4"></script>
+</body>
+
+</html>

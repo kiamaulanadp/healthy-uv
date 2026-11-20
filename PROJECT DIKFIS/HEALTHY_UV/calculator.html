@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#eef6ff">
+
+    <title>UV Calculator | HEALTHY UV</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=6">
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html">☀ HEALTHY <span>UV</span></a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Buka navigasi">
+            ☰
+        </button>
+
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="calculator.html" class="active">UV Calculator</a>
+            <a href="monitor.html">UV Monitor</a>
+            <a href="forecast.html">UV Forecast</a>
+            <a href="tips.html">Protection Tips</a>
+            <a href="know-your-uv.html">Know Your UV</a>
+            <a href="stay-protected.html">Stay Protected</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="section-head">
+            <h1>UV Risk Calculator</h1>
+            </p>
+        </div>
+
+        <div class="panel">
+            <div class="grid-two">
+                <div class="field">
+                    <label for="uvSlider">UV Index</label>
+
+                    <div class="range-row">
+                        <input id="uvSlider" type="range" min="0" max="15" step="0.1" value="8">
+
+                        <output class="range-value" id="uvValue">8.0</output>
+                    </div>
+
+                    <p class="note">
+                        Geser slider untuk memilih nilai UV Index (0–15).
+                    </p>
+                </div>
+
+                <div class="field">
+                    <label for="areaInput">
+                        Luas kulit yang akan diberi sunscreen (cm²)
+                    </label>
+
+                    <input id="areaInput" type="number" min="1" max="30000" value="3000">
+
+                    <p class="note">
+                        Masukkan perkiraan luas area kulit yang terpapar.
+                    </p>
+                </div>
+
+                <div class="field">
+                    <label for="skinType">Keterangan kulit</label>
+
+                    <select id="skinType">
+                        <option value="very-light">Putih</option>
+                        <option value="light">Kuning Langsat</option>
+                        <option value="medium" selected>Sawo Matang</option>
+                        <option value="brown">Cokelat</option>
+                        <option value="dark">Gelap</option>
+                    </select>
+
+                    <p class="note">
+                        Pilih warna kulit yang paling mendekati untuk melihat konteks sensitivitas UV.
+                    </p>
+                </div>
+            </div>
+
+            <div class="result" aria-live="polite">
+                <div>
+                    <div class="uv-big" id="uvBig">8.0</div>
+                    <small style="color: #8292a8; font-weight: 800">
+                        UV INDEX
+                    </small>
+                </div>
+
+                <div>
+                    <h3 id="riskTitle">Very High Risk</h3>
+                    <p id="riskDesc"></p>
+                </div>
+
+                <div class="result-details">
+                    <p>
+                        <strong>Potensi risiko:</strong>
+                        <span id="skinRisk"></span>
+                    </p>
+
+                    <p>
+                        <strong>Profil kulit:</strong>
+                        <span id="skinProfile"></span>
+                    </p>
+
+                    <p>
+                        <strong>Perlindungan:</strong>
+                        <span id="protection"></span>
+                    </p>
+
+                    <p>
+                        <strong>Rekomendasi sunscreen:</strong>
+                        <span id="spf"></span>
+                    </p>
+
+                    <p>
+                        <strong>Perkiraan jumlah sunscreen:</strong>
+                        <span id="dose"></span>
+                    </p>
+                </div>
+            </div>
+
+            <p class="note">
+                Kategori mengikuti skala UV Index WHO. Perhitungan sunscreen menggunakan acuan aplikasi 2 mg/cm², bukan dosis medis. UV Index bukan alat diagnosis kondisi kulit.
+            </p>
+        </div>
+
+        <div class="section-head" style="margin-top: 42px">
+            <h2>UV Index Categories</h2>
+            <p>Pahami kategori risiko berdasarkan nilai indeks UV.</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="level" style="--level: #62c99b">
+                <b>🟢 Low</b>
+                <span>0–2</span>
+                <small>Risiko rendah</small>
+            </div>
+
+            <div class="level" style="--level: #f4d05f">
+                <b>🟡 Moderate</b>
+                <span>3–5</span>
+                <small>Perlindungan dianjurkan</small>
+            </div>
+
+            <div class="level" style="--level: #ffad62">
+                <b>🟠 High</b>
+                <span>6–7</span>
+                <small>Perlindungan diperlukan</small>
+            </div>
+
+            <div class="level" style="--level: #ef7777">
+                <b>🔴 Very High</b>
+                <span>8–10</span>
+                <small>Perlindungan ekstra</small>
+            </div>
+
+            <div class="level" style="--level: #a78bfa">
+                <b>🟣 Extreme</b>
+                <span>11+</span>
+                <small>Hindari paparan langsung</small>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <b>☀ HEALTHY UV</b><br> Know Your Sun, Protect Your Skin!<br> An Educational Website for UV Awareness<br> © 2026 HEALTHY UV
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js?v=4"></script>
+</body>
+
+</html>

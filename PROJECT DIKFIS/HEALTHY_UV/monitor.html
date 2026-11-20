@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#eef6ff">
+
+    <title>Indonesia UV Monitor | HEALTHY UV</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html">☀ HEALTHY <span>UV</span></a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Buka navigasi">
+            ☰
+        </button>
+
+        <nav id="nav">
+            <a href="index.html">Home</a>
+            <a href="calculator.html">UV Calculator</a>
+            <a href="monitor.html" class="active">UV Monitor</a>
+            <a href="forecast.html">UV Forecast</a>
+            <a href="tips.html">Protection Tips</a>
+            <a href="know-your-uv.html">Know Your UV</a>
+            <a href="stay-protected.html">Stay Protected</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="section-head">
+            <h1>Indonesia UV Monitor</h1>
+            </p>
+        </div>
+
+        <div class="panel monitor-panel">
+            <div style="display: flex; justify-content: space-between; gap: 15px; align-items: center; flex-wrap: wrap; margin-bottom: 17px">
+                <div>
+                    <h3 style="color: var(--navy)">
+                        Explore Indonesian Cities
+                    </h3>
+                </div>
+
+                <span class="status" id="dataStatus">
+                    Siap mencari kota
+                </span>
+            </div>
+
+            <div class="city-tools">
+                <input class="searchbox" id="citySearch" type="search" list="citySuggestions" placeholder="🔎 Cari kota, misalnya Bandung..." autocomplete="off">
+                <datalist id="citySuggestions"></datalist>
+
+                <select class="searchbox" id="islandFilter" aria-label="Filter wilayah" style="max-width: 210px">
+                    <option value="all">Semua wilayah</option>
+                    <option>Jawa</option>
+                    <option>Sumatra</option>
+                    <option>Kalimantan</option>
+                    <option>Sulawesi</option>
+                    <option>Bali & Nusa Tenggara</option>
+                    <option>Maluku & Papua</option>
+                </select>
+            </div>
+
+            <div class="city-grid" id="cityGrid"></div>
+
+            <section class="map-panel" id="mapPanel" aria-live="polite" hidden>
+                <div class="map-heading">
+                    <div>
+                        <h3 id="mapTitle">Peta Indonesia</h3>
+                        <p id="mapSubtitle">Klik tombol "Lihat di peta" pada kota untuk menampilkan lokasinya.</p>
+                        <p class="uv-status" id="uvStatus">Indeks UV akan ditampilkan setelah kota dipilih.</p>
+                    </div>
+                    <a class="btn light" id="mapLink" href="https://www.openstreetmap.org/" target="_blank" rel="noopener">Buka peta besar ↗</a>
+                </div>
+                <div id="cityMap" role="img" aria-label="Peta lokasi kota terpilih"></div>
+                <a class="btn secondary uv-city-link" id="uvCityLink" href="https://cews.bmkg.go.id/dashboard-custom/prediksi-UVI-indonesia/" target="_blank" rel="noopener">Lihat indeks UV resmi di BMKG â†—</a>
+            </section>
+
+            <div class="bmkg-box">
+                <h3>Official BMKG UV Forecast</h3>
+
+                <p>
+                    Kota yang dipilih langsung dipusatkan pada peta. Untuk angka indeks UV resmi terbaru, gunakan dashboard BMKG karena data UV BMKG ditampilkan secara dinamis di situs resminya.
+                </p>
+
+                <a class="btn" href="https://cews.bmkg.go.id/dashboard-custom/prediksi-UVI-indonesia/" target="_blank" rel="noopener">
+                    Buka Dashboard BMKG ↗
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <b>☀ HEALTHY UV</b><br> Know Your Sun, Protect Your Skin!<br> An Educational Website for UV Awareness<br> © 2026 HEALTHY UV
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="app.js?v=4"></script>
+</body>
+
+</html>
